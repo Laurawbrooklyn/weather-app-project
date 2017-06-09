@@ -8,12 +8,12 @@ $("form").on("submit", function(event) {
 
 function search(query) {
 	var url = "http://api.openweathermap.org/data/2.5/weather?q=" + query + "&units=imperial&appid=bcfbfcaf752dc3dc0f4547e42bd0d35b"
-//Need to add a way to check whether the city entered is a valid city name and 
-//if it is not then should alert user to try again with a valid city name
 
 	$(".js-weather").html('loading weather...')
 
 	$.getJSON(url, function(response) {
+
+		console.log(response)
 		$(".js-weather").html('') 
 		var currentTemp = response.main.temp;
 		var currentForecast = response.weather[0].main;
@@ -38,7 +38,11 @@ function search(query) {
   				</tr>
   				`)
 	$(".js-weather").append(weatherTable)
-})
+}).fail(function() {
+//TODO Working on a more robust error response to handle when a city name is bad
+
+    $(".js-weather").append("Sorry you did not enter a valid city name, please try again!")
+  })
 }
 
 //Need to implement change to api to test out the 10 day forecast data
