@@ -38,7 +38,7 @@ function search(query) {
 	
 }).fail(function() {
 //TODO Working on a more robust error response to handle when a city name is bad
-		output = "Sorry you did not enter a valid city name, please try again!";
+		output = "Sorry we couldn't find that city, please try again!";
   }).always(function () {
   	$(".js-weather").html('') 
   	$(".js-weather").append(output)
