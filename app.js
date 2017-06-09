@@ -8,19 +8,17 @@ $("form").on("submit", function(event) {
 
 function search(query) {
 	var url = "http://api.openweathermap.org/data/2.5/weather?q=" + query + "&units=imperial&appid=bcfbfcaf752dc3dc0f4547e42bd0d35b"
-
-	$(".js-weather").html('loading weather...')
+	var output = 'loading...';
+	$(".js-weather").html(output)
 
 	$.getJSON(url, function(response) {
 
-		console.log(response)
-		$(".js-weather").html('') 
 		var currentTemp = response.main.temp;
 		var currentForecast = response.weather[0].main;
 		var cityName = response.name;
 		var currentHumidity = response.main.humidity;
 		var currentWind = response.wind.speed;
-		var weatherTable = (`
+		output = (`
 			<table> 
 				<tr>
     				<th>City Name</th>
@@ -37,11 +35,13 @@ function search(query) {
     				<td>${currentWind}</td>
   				</tr>
   				`)
-	$(".js-weather").append(weatherTable)
+	
 }).fail(function() {
 //TODO Working on a more robust error response to handle when a city name is bad
-
-    $(".js-weather").append("Sorry you did not enter a valid city name, please try again!")
+		output = "Sorry you did not enter a valid city name, please try again!";
+  }).always(function () {
+  	$(".js-weather").html('') 
+  	$(".js-weather").append(output)
   })
 }
 
