@@ -13,13 +13,14 @@ $("form").on("submit", function(event) {
 				var forecastOutput = 'loading...';
 				$(".js-weather").html(forecastOutput)
 				$.getJSON(forecastUrl, function(response) {
-					var dateOne = new Date(response.list[0].dt * 1000).toLocaleDateString();
-					var dateTwo = new Date(response.list[1].dt * 1000).toLocaleDateString();
-					var dateThree = new Date(response.list[2].dt * 1000).toLocaleDateString();
-					var dateFour = new Date(response.list[3].dt * 1000).toLocaleDateString();
-					var dateFive = new Date(response.list[4].dt * 1000).toLocaleDateString();
-					var dateSix = new Date(response.list[5].dt * 1000).toLocaleDateString();
-					var dateSeven = new Date(response.list[6].dt * 1000).toLocaleDateString();
+					var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+					var dateOne = new Date(response.list[0].dt * 1000).toLocaleDateString('en-US', options);
+					var dateTwo = new Date(response.list[1].dt * 1000).toLocaleDateString('en-US', options);
+					var dateThree = new Date(response.list[2].dt * 1000).toLocaleDateString('en-US', options);
+					var dateFour = new Date(response.list[3].dt * 1000).toLocaleDateString('en-US', options);
+					var dateFive = new Date(response.list[4].dt * 1000).toLocaleDateString('en-US', options);
+					var dateSix = new Date(response.list[5].dt * 1000).toLocaleDateString('en-US', options);
+					var dateSeven = new Date(response.list[6].dt * 1000).toLocaleDateString('en-US', options);
 					var tempOne = response.list[0].temp.day;
 					var tempTwo = response.list[1].temp.day;
 					var tempThree = response.list[2].temp.day;
