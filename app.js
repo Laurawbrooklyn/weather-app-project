@@ -8,7 +8,7 @@ $("form").on("submit", function(event) {
 	if (getForecast) {
 		searchForecast(query);
 			function searchForecast(query) {
-				var forecastUrl = "http://api.openweathermap.org/data/2.5/forecast/daily?q=" + query + "&units=imperial&cnt=7&appid=bcfbfcaf752dc3dc0f4547e42bd0d35b";
+				var forecastUrl = "//api.openweathermap.org/data/2.5/forecast/daily?q=" + query + "&units=imperial&cnt=7&appid=bcfbfcaf752dc3dc0f4547e42bd0d35b";
 				var forecastOutput = 'loading...';
 				$(".js-weather").html(forecastOutput)
 				$.getJSON(forecastUrl, function(response) {
@@ -89,7 +89,7 @@ $("form").on("submit", function(event) {
 })
 
 function search(query) {
-	var url = "http://api.openweathermap.org/data/2.5/weather?q=" + query + "&units=imperial&appid=bcfbfcaf752dc3dc0f4547e42bd0d35b";
+	var url = "//api.openweathermap.org/data/2.5/weather?q=" + query + "&units=imperial&appid=bcfbfcaf752dc3dc0f4547e42bd0d35b";
 	var output = 'loading...';
 	$(".js-weather").html(output)
 
