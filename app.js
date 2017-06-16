@@ -1,13 +1,29 @@
 $("form").on("submit", function(event) {
 
 	event.preventDefault()
-	var query = $("input").val()
-	search(query)
+	var query = $("input").val();
+	var getForecast = $("#forecast").is(":checked");
+	search(query); 
+
+	if (getForecast) {
+		// add in separate search for other query here
+		searchForecast(query);
+			function searchForecast(query) {
+				var forecastUrl = "//api.openweathermap.org/data/2.5/forecast/daily?q=" + query + "&units=imperial&cnt=10&appid=bcfbfcaf752dc3dc0f4547e42bd0d35b";
+				var forecastOutput = 'loading...';
+				$(".js-weather").html(forecastOutput)
+				$.getJSON(forecastUrl, function(response) {
+					var date = new Date(response.list[0].dt * 1000).toLocaleDateString();
+					console.log(date)
+					var tempOne = response.list[0].temp.day;
+				})
+			}
+	}
 	$("input").val('')
 })
 
 function search(query) {
-	var url = "http://api.openweathermap.org/data/2.5/weather?q=" + query + "&units=imperial&appid=bcfbfcaf752dc3dc0f4547e42bd0d35b"
+	var url = "//api.openweathermap.org/data/2.5/weather?q=" + query + "&units=imperial&appid=bcfbfcaf752dc3dc0f4547e42bd0d35b";
 	var output = 'loading...';
 	$(".js-weather").html(output)
 
@@ -42,6 +58,7 @@ function search(query) {
   }).always(function () {
   	$(".js-weather").html('') 
   	$(".js-weather").append(output)
+ 
   })
 }
 
