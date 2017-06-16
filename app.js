@@ -8,7 +8,7 @@ $("form").on("submit", function(event) {
 	if (getForecast) {
 		searchForecast(query);
 			function searchForecast(query) {
-				var forecastUrl = "http://api.openweathermap.org/data/2.5/forecast/daily?q=" + query + "&units=imperial&cnt=10&appid=bcfbfcaf752dc3dc0f4547e42bd0d35b";
+				var forecastUrl = "http://api.openweathermap.org/data/2.5/forecast/daily?q=" + query + "&units=imperial&cnt=7&appid=bcfbfcaf752dc3dc0f4547e42bd0d35b";
 				var forecastOutput = 'loading...';
 				$(".js-weather").html(forecastOutput)
 				$.getJSON(forecastUrl, function(response) {
@@ -20,22 +20,23 @@ $("form").on("submit", function(event) {
 					var dateFive = new Date(response.list[4].dt * 1000).toLocaleDateString('en-US', options);
 					var dateSix = new Date(response.list[5].dt * 1000).toLocaleDateString('en-US', options);
 					var dateSeven = new Date(response.list[6].dt * 1000).toLocaleDateString('en-US', options);
+
 					var tempOne = response.list[0].temp.day;
 					var tempTwo = response.list[1].temp.day;
 					var tempThree = response.list[2].temp.day;
-					var tempFour = reponse.list[3].temp.day;
+					var tempFour = response.list[3].temp.day;
 					var tempFive = response.list[4].temp.day;
 					var tempSix = response.list[5].temp.day;
 					var tempSeven = response.list[6].temp.day;
-					console.log(tempOne)
-					var forecastOne = response.list[0].weather.description;
-					var forecastTwo = response.list[1].weather.description;
-					var forecastThree = response.list[2].weather.description;
-					var forecastFour = response.list[3].weather.description;
-					var forecastFive = response.list[4].weather.description;
-					var forecastSix = response.list[5].weather.description;
-					var forecastSeven = response.list[6].weather.description;
-
+					
+					var forecastOne = response.list[0].weather[0].description;
+					var forecastTwo = response.list[1].weather[0].description;
+					var forecastThree = response.list[2].weather[0].description;
+					var forecastFour = response.list[3].weather[0].description;
+					var forecastFive = response.list[4].weather[0].description;
+					var forecastSix = response.list[5].weather[0].description;
+					var forecastSeven = response.list[6].weather[0].description;
+					
 					forecastOutput = (`
 						<h1>7 Day Forecast</h1>
 						<table> 
@@ -80,10 +81,11 @@ $("form").on("submit", function(event) {
     							<td>${forecastSeven}</td>
   							</tr>
   				`)
+				$("input").val('')
+				$(".js-weather-seven").html(forecastOutput)
 				})
 			}
 	}
-	$("input").val('')
 })
 
 function search(query) {
