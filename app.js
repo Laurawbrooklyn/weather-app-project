@@ -38,6 +38,7 @@ $("form").on("submit", function(event) {
 					var forecastSeven = response.list[6].weather.description;
 
 					forecastOutput = (`
+						<h1>7 Day Forecast</h1>
 						<table> 
 							<tr>
     							<th>Date</th>
