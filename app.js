@@ -9,13 +9,31 @@ $("form").on("submit", function(event) {
 		// add in separate search for other query here
 		searchForecast(query);
 			function searchForecast(query) {
-				var forecastUrl = "//api.openweathermap.org/data/2.5/forecast/daily?q=" + query + "&units=imperial&cnt=10&appid=bcfbfcaf752dc3dc0f4547e42bd0d35b";
+				var forecastUrl = "api.openweathermap.org/data/2.5/forecast/daily?q=" + query + "&units=imperial&cnt=10&appid=bcfbfcaf752dc3dc0f4547e42bd0d35b";
 				var forecastOutput = 'loading...';
 				$(".js-weather").html(forecastOutput)
 				$.getJSON(forecastUrl, function(response) {
-					var date = new Date(response.list[0].dt * 1000).toLocaleDateString();
-					console.log(date)
+					var dateOne = new Date(response.list[0].dt * 1000).toLocaleDateString();
+					var dateTwo = new Date(response.list[1].dt * 1000).toLocaleDateString();
+					var dateThree = new Date(response.list[2].dt * 1000).toLocaleDateString();
+					var dateFour = new Date(response.list[3].dt * 1000).toLocaleDateString();
+					var dateFive = new Date(response.list[4].dt * 1000).toLocaleDateString();
+					var dateSix = new Date(response.list[5].dt * 1000).toLocaleDateString();
+					var dateSeven = new Date(response.list[6].dt * 1000).toLocaleDateString();
 					var tempOne = response.list[0].temp.day;
+					var tempTwo = response.list[1].temp.day;
+					var tempThree = response.list[2].temp.day;
+					var tempFour = reponse.list[3].temp.day;
+					var tempFive = response.list[4].temp.day;
+					var tempSix = response.list[5].temp.day;
+					var tempSeven = response.list[6].temp.day;
+					var forecastOne = response.list[0].weather.description;
+					var forecastTwo = response.list[1].weather.description;
+					var forecastThree = response.list[2].weather.description;
+					var forecastFour = response.list[3].weather.description;
+					var forecastFive = response.list[4].weather.description;
+					var forecastSix = response.list[5].weather.description;
+					var forecastSeven = response.list[6].weather.description;
 				})
 			}
 	}
