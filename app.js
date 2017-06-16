@@ -6,7 +6,6 @@ $("form").on("submit", function(event) {
 	search(query); 
 
 	if (getForecast) {
-		// add in separate search for other query here
 		searchForecast(query);
 			function searchForecast(query) {
 				var forecastUrl = "http://api.openweathermap.org/data/2.5/forecast/daily?q=" + query + "&units=imperial&cnt=10&appid=bcfbfcaf752dc3dc0f4547e42bd0d35b";
@@ -118,7 +117,6 @@ function search(query) {
   				`)
 	
 }).fail(function() {
-//TODO Working on a more robust error response to handle when a city name is bad
 		output = "Sorry we couldn't find that city, please try again!";
   }).always(function () {
   	$(".js-weather").html('') 
@@ -127,8 +125,4 @@ function search(query) {
   })
 }
 
-//Need to implement change to api to test out the 10 day forecast data
-//New URL needs to be added
-//Variables need to be changed to match new URL responses for extended forecast data
-//Decide How to handle 10 day data (i.e. add a new button and new table
-//How to handle unix date code conversion for 10 day forecast
+
