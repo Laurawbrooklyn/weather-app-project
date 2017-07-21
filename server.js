@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 var cors = require('cors');
 app.use(express.static('public'));	
-app.use(cors());
+app.use(cors({credentials: true, origin: true}));
 const expressNunjucks = require('express-nunjucks');
 
 const isDev = app.get('env') === 'development';
