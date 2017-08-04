@@ -1,5 +1,14 @@
 body {
 	padding: 10px;
+	height: 100%;
+}
+
+.bg {
+	background-image: url(public/clouds.jpg);
+	height: 100%;
+	background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 table, th, td {
