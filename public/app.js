@@ -21,13 +21,13 @@ $("form").on("submit", function(event) {
 					var dateSix = new Date(response.list[5].dt * 1000).toLocaleDateString('en-US', options);
 					var dateSeven = new Date(response.list[6].dt * 1000).toLocaleDateString('en-US', options);
 
-					var tempOne = response.list[0].temp.day;
-					var tempTwo = response.list[1].temp.day;
-					var tempThree = response.list[2].temp.day;
-					var tempFour = response.list[3].temp.day;
-					var tempFive = response.list[4].temp.day;
-					var tempSix = response.list[5].temp.day;
-					var tempSeven = response.list[6].temp.day;
+					var tempOne = math.round(response.list[0].temp.day);
+					var tempTwo = math.round(response.list[1].temp.day);
+					var tempThree = math.round(response.list[2].temp.day);
+					var tempFour = math.round(response.list[3].temp.day);
+					var tempFive = math.round(response.list[4].temp.day);
+					var tempSix = math.round(response.list[5].temp.day);
+					var tempSeven = math.round(response.list[6].temp.day);
 					
 					var forecastOne = response.list[0].weather[0].description;
 					var forecastTwo = response.list[1].weather[0].description;
@@ -95,7 +95,7 @@ function search(query) {
 
 	$.getJSON(url, function(response) {
 
-		var currentTemp = response.main.temp;
+		var currentTemp = math.round(response.main.temp);
 		var currentForecast = response.weather[0].main;
 		var cityName = response.name;
 		var currentHumidity = response.main.humidity;
