@@ -15,6 +15,7 @@ body {
 	background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100%;
 }
 
 table, th, td {
@@ -26,11 +27,11 @@ table {
 }
 
 th {
-    background-color: #191970;
+    background-color: white;
 }
 
 td {
-	background-color: #191970;
+	background-color: white;
 }
 
 button {
