@@ -18,10 +18,11 @@ body {
     height: 100%;
 }
 
-table, th, td {
+table, th, td, button {
 	border: 1px solid black;
 	margin-left: auto;
 	margin-right: auto;
+	background-color: white;
 }
 
 table {
@@ -37,5 +38,6 @@ td {
 }
 
 button {
+	background-color: white;
 	color: DarkSlateGray;
 }
