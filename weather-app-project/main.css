@@ -1,0 +1,55 @@
+body, html {
+    height: 100%;
+}
+
+/*body {
+	color: DarkSlateGray;
+	text-align: center;
+    font-size: 16px;
+    font-family: 'Roboto', arial, sans-serif;
+    display: block;
+    position: relative;
+    padding-top: 250px;
+}*/
+
+/*.bg {
+	background-image: url(cloudsbg.jpg);
+	background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;*/
+}
+
+.bg-image {
+		background-image: url(cloudsbg.jpg);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: 50%;
+		position: relative;
+}
+
+h1 {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+/*table, th, td, button {
+	border: 1px solid LightGray;
+	border-radius: 3px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: white;
+}
+
+table {
+	border-collapse: collapse;
+}*/
+
+button {
+	color: DarkSlateGray;
+}
