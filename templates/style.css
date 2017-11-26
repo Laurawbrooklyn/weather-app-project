@@ -22,12 +22,14 @@ body, html {
 }
 
 .rain-text {
-    text-align: center;
+    text-align: right;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    /*top: 50%;
+    left: 50%;*/
+    /*transform: translate(-50%, -50%);*/
     color: white;
+    top: 20%;
+    right: 15%;
 }
 
 .home-text {
@@ -38,7 +40,8 @@ body, html {
     transform: translate(-50%, -50%);
     color: white;
 }
-.home-text h1 {
+
+.home-text h1, .rain-text h1 {
     font-size: 50px;
 }
 
@@ -55,17 +58,35 @@ body, html {
     font-size: 20px;
 }
 
+.rain-text-bottom {
+    text-align: left;
+    /*bottom: 5%;
+    left: 15%;*/
+    color: white;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+    /*position: absolute;*/
+    /*bottom: 8px;
+    left: 16px;*/
+    /*font-size: 20px;
+  }*/
+  ul {
+    list-style-type: none;
+}
+
 .search-button {
     border-color: gray;
     border-radius: 3px;
     padding: 5px;
 }
 #city-search {
-  display: block;
-  margin: 0 auto;
-  margin-bottom: 10px;
-  border-radius: 3px;
-  padding: 5px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    padding: 5px;
 }
 
 .gradient-top {
