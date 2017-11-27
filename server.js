@@ -13,9 +13,9 @@ app.use(express.static('public'));
 const expressNunjucks = require('express-nunjucks');
 
 const isDev = app.get('env') === 'development';
- 
+
 app.set('views', __dirname + '/templates');
- 
+
 const njk = expressNunjucks(app, {
     watch: isDev,
     noCache: isDev
