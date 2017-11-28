@@ -2,34 +2,35 @@
 <html lang = "en">
 <head>
 	<meta charset="utf-8">
-	<title>Weather By City</title>
+	<title>Search For Weather By City</title>
 	<meta name="viewport" content="width=device-width">
-</head>
-<body class="bg">
-
-	<h1>Search For Weather with the OpenWeatherMap API</h1>
-	<p>You can search by city name, city and state or city and country</p>
-	<form>
-		<label for="city">Search For A City</label>
-		<input type="text" placeholder="Brooklyn" id="city" name= "city-name" value = "">
-		<input type="checkbox" name="forecast" value="1" id="forecast">
-		<label for="forecast">Show 7 Day Forecast</label>
-		<button type="submit" name="submit-button">Search</button>
-	</form>
-	<br>
-	<div class="js-weather">
-	</div>
-
-	<div class="js-weather-seven">
-	</div>
-
-
 	<link rel="stylesheet" media="none" onload="this.media='all'" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
-	<link rel="stylesheet" media="none" onload="this.media='all'" href="main.css">
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" media="none" onload="this.media='all'">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link href="main.css" rel="stylesheet" type="text/css">
 
+</head>
+
+<body>
+
+	<div class="home-image">
+		<div class="gradient gradient-top"></div>
+		<div class="gradient gradient-bottom"></div>
+		<div class="home-text">
+			<h1>Search For Weather</h1>
+			<input type="text" placeholder="Brooklyn" id="city-search" name= "city-name" value = "">
+			<button class="search-button">Search</button>
+
+		</div>
+		<div class="home-text-bottom">
+			<p>You can search by city name, city and state or city and country</p>
+		</div>
+	</div>
+
+<!-- added a div placeholder for weather results like in index-old.html -->
+	<div class="js-weather"></div>
+
+<!-- added scripts below from original (index-old.html) file -->
 	<script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script defer type="text/javascript" src='app.js'>
-	</script>
+	<script defer type="text/javascript" src='app.js'></script>
 </body>
 </html>
