@@ -21,7 +21,8 @@ $(".search-button").on("click", function(event) {
 			var currentHumidity = response.main.humidity;
 
 			output = (``)
-
+			$(".rain-page").removeClass("hidden")
+			$(".index-page").addClass("hidden")
 			}).fail(function() {
 				output = "Sorry we couldn't find that city, please try again!";
 			}).always(function () {

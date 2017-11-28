@@ -11,7 +11,7 @@
 </head>
 
 <body>
-
+<div class="index-page">
 	<div class="home-image">
 		<div class="gradient gradient-top"></div>
 		<div class="gradient gradient-bottom"></div>
@@ -19,15 +19,29 @@
 			<h1>Search For Weather</h1>
 			<input type="text" placeholder="Brooklyn" id="city-search" name= "city-name" value = "">
 			<button class="search-button">Search</button>
-
 		</div>
 		<div class="home-text-bottom">
 			<p>You can search by city name, city and state or city and country</p>
 		</div>
 	</div>
+</div>
 
-<!-- added a div placeholder for weather results like in index-old.html -->
-	<div class="js-weather"></div>
+
+<div class="rain-page hidden">
+	<div class="rain-image"></div>
+		<div class="gradient-top"></div>
+		<div class="gradient-bottom"></div>
+		<div class="rain-text">
+			<h1>Stay Dry!</h1>
+		</div>
+		<div class="rain-text-bottom">
+			<ul>
+				<li>Current Temperature in City: 63 F</li>
+				<li>Current Forecast: Rain</li>
+				<li>Relative Humidity: 74%</li>
+			</ul>
+		</div>
+</div>
 
 <!-- added scripts below from original (index-old.html) file -->
 	<script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
