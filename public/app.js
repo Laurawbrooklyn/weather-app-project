@@ -1,8 +1,6 @@
 $(".search-button").on("click", function(event) {
-
 	event.preventDefault()
 	var query = $("input").val();
-
 	search(query);
 })
 
@@ -20,14 +18,25 @@ $(".search-button").on("click", function(event) {
 			var cityName = response.name;
 			var currentHumidity = response.main.humidity;
 
-			output = (``)
 			$(".rain-page").removeClass("hidden")
 			$(".index-page").addClass("hidden")
+			
+			if (response.weather[0].main==="Clear"){
+				$("#top-text").text('Go Outside')
+				$('.rain-image').css("background-image", "url(/cloudsbg.jpg)");  
+				
+			} else if (response.weather[0].main==="Rain"){
+				$("#top-text").text('Stay Dry!')
+			}
+			  
+			
+			
+			
 			}).fail(function() {
-				output = "Sorry we couldn't find that city, please try again!";
+				//output = "Sorry we couldn't find that city, please try again!";
 			}).always(function () {
-				$(".js-weather").html('')
-				$(".js-weather").append(output)
+				//$(".js-weather").html('')
+				//$(".js-weather").append(output)
 
 			})
 		}

@@ -25,18 +25,16 @@ app.get("/", (req, res) => {
 });
 app.get('/data/*', (req, res) => {
   request.get("http://api.openweathermap.org" + req.url, {
-
     json: true
   }, function(error, response, body) {
     if (!error && response.statusCode == 200) {
-
+      
       res.json(body);
     } else {
       console.log(error)
-      res.error(error);
+      res.status(500).json(error);
     }
   });
-
 })
 
 app.listen(process.env.PORT || 8080, () => {
