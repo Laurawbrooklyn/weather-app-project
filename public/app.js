@@ -20,18 +20,20 @@ $(".search-button").on("click", function(event) {
 
 			$(".rain-page").removeClass("hidden")
 			$(".index-page").addClass("hidden")
-			
+			$("#location").append(cityName)
+			$("#current-temp").append(currentTemp)
+			$("#current-forecast").append(currentForecast)
+			$("#current-humidity").append(currentHumidity)
+
 			if (response.weather[0].main==="Clear"){
 				$("#top-text").text('Go Outside')
-				$('.rain-image').css("background-image", "url(/cloudsbg.jpg)");  
-				
+				$('.rain-image').css("background-image", "url(/clear.png)");
+
 			} else if (response.weather[0].main==="Rain"){
 				$("#top-text").text('Stay Dry!')
 			}
-			  
-			
-			
-			
+
+
 			}).fail(function() {
 				//output = "Sorry we couldn't find that city, please try again!";
 			}).always(function () {

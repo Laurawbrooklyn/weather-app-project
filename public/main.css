@@ -5,23 +5,20 @@ body, html {
 
 .home-image {
     background-image: url("/home.jpg");
-}
-
-.image-cover{
-  height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  position:fixed;
-  top:0px;
-  right:0px;
-  bottom:0px;
-  left:0px;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
 
 .rain-image {
     background-image: url("/rain.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
 
 .rain-text {
