@@ -3,6 +3,10 @@ body, html {
     font-family: 'Roboto', sans-serif;
 }
 
+.index-page, .rain-page {
+    height: 100%;
+}
+
 .home-image {
     background-image: url("/home.jpg");
     height: 100%;
@@ -13,7 +17,7 @@ body, html {
 }
 
 .rain-image {
-    background-image: url("/rain.jpg");
+    background-image: url("/sky.jpg");
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
