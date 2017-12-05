@@ -113,6 +113,19 @@ ul {
 .hidden {
   display: none;
 }
+.footer{
+//  background-color: gray;
+  position: fixed;
+  bottom:0px;
+  right:0px;
+  left:0px;
+  color:white;
+  text-align: center;
+  padding:2px;
+}
+.footer a{
+  color:gray;
+}
 
 @media (max-width: 500px) {
   .home-text h1 {
