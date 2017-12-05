@@ -25,23 +25,31 @@ function search(query) {
 		$("#current-forecast").append(currentForecast)
 		$("#current-humidity").append(currentHumidity)
 
-		if (response.weather[0].main==="Clear"){
-			$("#top-text").text('Go Outside')
+		if (currentForecast==="Clear"){
+			$("#top-text").text('Enjoy the weather!')
 			$('.rain-image').css("background-image", "url(/clear.png)");
-
-		} else if (response.weather[0].main==="Rain"){
+		} else if (currentForecast==="Rain"){
 			$("#top-text").text('Stay Dry!')
 			$('.rain-image').css("background-image", "url(/rain.jpg)");
-		} else if (response.weather[0].main==="Snow"){
+		} else if (currentForecast==="Snow"){
 			$("#top-text").text('It is cold outside!')
 			$('.rain-image').css("background-image", "url(/snowman.jpg)");
+		} else if (currentTemp <= 69 && !currentForecast==="Snow" && !currentForecast==="Rain"){
+			$("top-text").text('Time to go outside!')
+			$('.rain-image').css("background-image", "url(/clear.png)")
+		} else if (currentTemp >= 70 && !currentForecast==="Rain") {
+			$("top-text").text('Time to go outside!')
+			$('.rain-image').css("background-image", "url(/sunshine.jpg)")
+		} else {
+			$("#top-text").text('Enjoy the weather!')
+			$(".rain-image").css("background-image", "url(/sky.jpg)");
 		}
 
-			}).fail(function() {
-				//output = "Sorry we couldn't find that city, please try again!";
-			}).always(function () {
-				//$(".js-weather").html('')
-				//$(".js-weather").append(output)
+	}).fail(function() {
+		//output = "Sorry we couldn't find that city, please try again!";
+	}).always(function () {
+		//$(".js-weather").html('')
+		//$(".js-weather").append(output)
 
-			})
-		}
+	})
+}
