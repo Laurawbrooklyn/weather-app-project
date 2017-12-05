@@ -3,7 +3,7 @@ body, html {
     font-family: 'Roboto', sans-serif;
 }
 
-.index-page, .rain-page {
+.index-page, .weather-page {
     height: 100%;
 }
 
@@ -16,7 +16,7 @@ body, html {
     position: relative;
 }
 
-.rain-image {
+.weather-image {
     background-image: url("/sky.jpg");
     height: 100%;
     background-position: center;
@@ -25,7 +25,7 @@ body, html {
     position: relative;
 }
 
-.rain-text {
+.weather-text {
     text-align: right;
     position: fixed;
     top: 5%;
@@ -33,7 +33,7 @@ body, html {
     color: white;
 }
 
-.rain-text-bottom {
+.weather-text-bottom {
     text-align: left;
     position: fixed;
     bottom: 5%;
@@ -56,7 +56,7 @@ body, html {
     width: 80%;
 }
 
-.home-text h1, .rain-text h1 {
+.home-text h1, .weather-text h1 {
     font-size: 50px;
 }
 
@@ -118,7 +118,7 @@ body, html {
   .home-text h1 {
       font-size: 40px;
   }
-  .rain-text-bottom {
+  .weather-text-bottom {
       bottom: 3%;
       left: 3%;
   }

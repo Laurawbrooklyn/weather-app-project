@@ -4,7 +4,6 @@ $(".search-button").on("click", function(event) {
 	search(query);
 })
 
-
 function search(query) {
 	var url = "/data/2.5/weather?q=" + query + "&units=imperial&appid=bcfbfcaf752dc3dc0f4547e42bd0d35b";
 	var output = 'loading...';
@@ -18,32 +17,33 @@ function search(query) {
 		var cityName = response.name;
 		var currentHumidity = response.main.humidity;
 
-		$(".rain-page").removeClass("hidden")
-		$(".index-page").addClass("hidden")
 		$("#location").append(cityName)
 		$("#current-temp").append(currentTemp)
 		$("#current-forecast").append(currentForecast)
 		$("#current-humidity").append(currentHumidity)
 
-		if (currentForecast==="Clear"){
-			$("#top-text").text('Enjoy the weather!')
-			$('.rain-image').css("background-image", "url(/clear.png)");
-		} else if (currentForecast==="Rain"){
+		if (currentForecast==="Rain"){
 			$("#top-text").text('Stay Dry!')
-			$('.rain-image').css("background-image", "url(/rain.jpg)");
+			$('.weather-image').css("background-image", "url(/rain.jpg)");
 		} else if (currentForecast==="Snow"){
+			$("#top-text").text('Enjoy the snow!')
+			$('.weather-image').css("background-image", "url(/snowman.jpg)");
+		} else if (currentTemp <= 69 && "Clear" && currentTemp >= 40){
+			$("#top-text").text('Time to go outside!')
+			$('.weather-image').css("background-image", "url(/clear.png)")
+		} else if (currentTemp >= 70 && "Clear") {
+			$("#top-text").text('Enjoy the sunshine!')
+			$('.weather-image').css("background-image", "url(/sunshine.jpg)")
+		} else if (currentTemp < 40) {
 			$("#top-text").text('It is cold outside!')
-			$('.rain-image').css("background-image", "url(/snowman.jpg)");
-		} else if (currentTemp <= 69 && !currentForecast==="Snow" && !currentForecast==="Rain"){
-			$("top-text").text('Time to go outside!')
-			$('.rain-image').css("background-image", "url(/clear.png)")
-		} else if (currentTemp >= 70 && !currentForecast==="Rain") {
-			$("top-text").text('Time to go outside!')
-			$('.rain-image').css("background-image", "url(/sunshine.jpg)")
+			$('.weather-image').css("background-image", "url(/cold.jpg)")
 		} else {
 			$("#top-text").text('Enjoy the weather!')
-			$(".rain-image").css("background-image", "url(/sky.jpg)");
+			$(".weather-image").css("background-image", "url(/sky.jpg)");
 		}
+
+		$(".weather-page").removeClass("hidden")
+		$(".index-page").addClass("hidden")
 
 	}).fail(function() {
 		//output = "Sorry we couldn't find that city, please try again!";
