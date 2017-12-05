@@ -8,27 +8,25 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link href="main.css" rel="stylesheet" type="text/css">
 </head>
-
 <body>
 
-<div class="index-page">
-	<div class="image-cover home-image">
-		<div class="gradient gradient-top"></div>
-		<div class="gradient gradient-bottom"></div>
-		<div class="home-text">
-			<h1>Search For Weather</h1>
-			<input type="text" placeholder="Brooklyn" id="city-search" name= "city-name" value = "">
-			<button class="search-button">Search</button>
-		</div>
-		<div class="home-text-bottom" id="home-text-bottom">
-			<p>You can search by city name, city and state or city and country</p>
+	<div class="index-page">
+		<div class="image-cover home-image">
+			<div class="gradient gradient-top"></div>
+			<div class="gradient gradient-bottom"></div>
+			<div class="home-text">
+				<h1>Search For Weather</h1>
+				<input type="text" placeholder="Brooklyn" id="city-search" name= "city-name" value = "">
+				<button class="search-button">Search</button>
+			</div>
+			<div class="home-text-bottom" id="home-text-bottom">
+				<p>You can search by city name, city and state or city and country</p>
+			</div>
 		</div>
 	</div>
-</div>
-
-
-<div class="weather-page hidden">
-	<div class="image-cover weather-image"></div>
+	
+	<div class="weather-page hidden">
+		<div class="image-cover weather-image"></div>
 		<div class="gradient-top"></div>
 		<div class="gradient-bottom"></div>
 		<div class="weather-text">
@@ -42,9 +40,8 @@
 				<li id="current-humidity">Relative Humidity (%): </li>
 			</ul>
 		</div>
-</div>
+	</div>
 
-<!-- added scripts below from original (index-old.html) file -->
 	<script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script defer type="text/javascript" src='app.js'></script>
 </body>

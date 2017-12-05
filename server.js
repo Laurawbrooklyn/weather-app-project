@@ -9,9 +9,7 @@ app.use(function(req, res, next) {
 });
 app.use(express.static('public'));
 const expressNunjucks = require('express-nunjucks');
-
 const isDev = app.get('env') === 'development';
-
 app.set('views', __dirname + '/templates');
 
 const njk = expressNunjucks(app, {
@@ -20,7 +18,6 @@ const njk = expressNunjucks(app, {
 });
 
 app.get("/", (req, res) => {
-  const message = 'hola mundo';
   res.render('index');
 });
 app.get('/data/*', (req, res) => {
@@ -28,7 +25,7 @@ app.get('/data/*', (req, res) => {
     json: true
   }, function(error, response, body) {
     if (!error && response.statusCode == 200) {
-      
+
       res.json(body);
     } else {
       console.log(error)

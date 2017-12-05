@@ -6,12 +6,8 @@ $(".search-button").on("click", function(event) {
 
 function search(query) {
 	var url = "/data/2.5/weather?q=" + query + "&units=imperial&appid=bcfbfcaf752dc3dc0f4547e42bd0d35b";
-	var output = 'loading...';
-	$(".js-weather").html(output)
 
 	$.getJSON(url, function(response) {
-
-		console.log(response)
 		var currentTemp = Math.round(response.main.temp);
 		var currentForecast = response.weather[0].main;
 		var cityName = response.name;
@@ -22,26 +18,30 @@ function search(query) {
 		$("#current-forecast").append(currentForecast)
 		$("#current-humidity").append(currentHumidity)
 
+		var headerText;
+		var image;
 		if (currentForecast==="Rain"){
-			$("#top-text").text('Stay Dry!')
-			$('.weather-image').css("background-image", "url(/rain.jpg)");
+			headerText = 'Stay Dry!';
+			image="rain.jpg";
 		} else if (currentForecast==="Snow"){
-			$("#top-text").text('Enjoy the snow!')
-			$('.weather-image').css("background-image", "url(/snowman.jpg)");
+			headerText = 'Enjoy the snow!';
+			image="snowman.jpg";
 		} else if (currentTemp <= 69 && "Clear" && currentTemp >= 40){
-			$("#top-text").text('Time to go outside!')
-			$('.weather-image').css("background-image", "url(/clear.png)")
+			headerText = 'Time to go outside!';
+			image="clear.png";
 		} else if (currentTemp >= 70 && currentForecast==="Clear") {
-			$("#top-text").text('Enjoy the sunshine!')
-			$('.weather-image').css("background-image", "url(/sunshine.jpg)")
+			headerText = 'Enjoy the sunshine!';
+			image="sunshine.jpg";
 		} else if (currentTemp < 40) {
-			$("#top-text").text('It is cold outside!')
-			$('.weather-image').css("background-image", "url(/cold.jpg)")
+			headerText = 'It is cold outside!';
+			image="cold.jpg";
 		} else {
-			$("#top-text").text('Enjoy the weather!')
-			$(".weather-image").css("background-image", "url(/sky.jpg)");
+			headerText = 'Enjoy the weather!';
+			image="sky.jpg";
 		}
 
+		$("#top-text").text(headerText)
+		$('.weather-image').css("background-image", `url(/images/${image})`)
 		$(".weather-page").removeClass("hidden")
 		$(".index-page").addClass("hidden")
 
