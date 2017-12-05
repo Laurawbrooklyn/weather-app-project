@@ -31,7 +31,7 @@ function search(query) {
 		} else if (currentTemp <= 69 && "Clear" && currentTemp >= 40){
 			$("#top-text").text('Time to go outside!')
 			$('.weather-image').css("background-image", "url(/clear.png)")
-		} else if (currentTemp >= 70 && "Clear") {
+		} else if (currentTemp >= 70 && currentForecast==="Clear") {
 			$("#top-text").text('Enjoy the sunshine!')
 			$('.weather-image').css("background-image", "url(/sunshine.jpg)")
 		} else if (currentTemp < 40) {
@@ -46,10 +46,6 @@ function search(query) {
 		$(".index-page").addClass("hidden")
 
 	}).fail(function() {
-		//output = "Sorry we couldn't find that city, please try again!";
-	}).always(function () {
-		//$(".js-weather").html('')
-		//$(".js-weather").append(output)
-
+		$("#home-text-bottom").text("Sorry please try another location!")
 	})
 }
