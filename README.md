@@ -1,7 +1,7 @@
 <!--  -->
-# **Weather Appr**
+# **Weather App**
 
-This Weather App is a web app that allows you to search for current weather by city or City and Country using the OpenWeatherMap API. 
+This Weather App is a web app that allows you to search for current weather by city or City and Country using the OpenWeatherMap API.
 
 Ran into CORS issue with OpenWeatherMap API and used node to fix! USE this heroku link to open my project: https://immense-fjord-68436.herokuapp.com/
 
