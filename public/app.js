@@ -28,7 +28,7 @@ function search(query) {
 			image="snowman.jpg";
 		} else if (currentTemp <= 69 && "Clear" && currentTemp >= 40){
 			headerText = 'Time to go outside!';
-			image="clear.png";
+			image="clear.jpg";
 		} else if (currentTemp >= 70 && currentForecast==="Clear") {
 			headerText = 'Enjoy the sunshine!';
 			image="sunshine.jpg";
