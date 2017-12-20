@@ -1,4 +1,3 @@
-<!--  -->
 # **Weather App**
 
 This Weather App is a web app that allows you to search for current weather by city or City and Country using the OpenWeatherMap API.
