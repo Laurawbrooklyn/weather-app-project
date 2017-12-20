@@ -9,13 +9,10 @@ Ran into CORS issue with OpenWeatherMap API and used node to fix! USE this herok
 
 ### Full Screen Homepage:
 
-![full sized picture of homepage with clouds](/Home-Desktop.png)
+![full sized picture of homepage with clouds](/images/screenshot-home-fullsized.png)
 
 ### Full Screen Results Sample Page For Rain:
-![picture of full sized view of results for rain](/Sample-Results-Desktop-Rain.png)
+![picture of full sized view of results for rain](/images/screenshot-rain-fullsized.png)
 
 ### Mobile Sized Results Sample Page For Cold:
-![picture of mobile sized view of results for cold](/Sample-Results-Mobile-Cold.png)
-
-### Mobile Sized Results Sample Page for Rain:
-![picture of mobile sized view of results for rain](/Sample-Results-Mobile-Rain.png)
+![picture of mobile sized view of results for cold](/images/screenshot-cold-mobile.png)
