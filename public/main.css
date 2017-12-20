@@ -7,6 +7,17 @@ body, html {
   height: 100%;
 }
 
+.logo {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  height: 40px;
+  z-index: 2;
+}
+
+.logo img {
+  height: 100%;
+}
 .home-image {
   background-image: url("/images/home.jpg");
   height: 100%;
@@ -77,15 +88,6 @@ ul {
   border-color: gray;
   border-radius: 3px;
   padding: 5px;
-}
-
-.return-home {
-  border-color: gray;
-  border-radius: 3px;
-  padding: 5px;
-  color: black;
-  font-size: 18px;
-  text-decoration: none;
 }
 
 #city-search {
