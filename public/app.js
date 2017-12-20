@@ -45,6 +45,12 @@ function search(query) {
 		$(".weather-page").removeClass("hidden")
 		$(".index-page").addClass("hidden")
 
+// TRYING TO GET NEW BUTTON TO WORK BY CLICKING TO MAKE WEATHER PAGE HIDDEN & ADD INDEX PAGE BACK"
+		// $(".search-button").click(function() {
+		// 		$(".weather-page").addClass("hidden")
+		// 		$(".index-page").removeClass("hidden")
+		// 	});
+
 	}).fail(function() {
 		$("#home-text-bottom").text("Sorry please try another location!")
 	})

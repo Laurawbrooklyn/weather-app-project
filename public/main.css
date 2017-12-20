@@ -78,6 +78,16 @@ ul {
   border-radius: 3px;
   padding: 5px;
 }
+
+.return-home {
+  border-color: gray;
+  border-radius: 3px;
+  padding: 5px;
+  color: black;
+  font-size: 18px;
+  text-decoration: none;
+}
+
 #city-search {
   display: block;
   margin: 0 auto;
